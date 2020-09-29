@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Tack } from './app.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
