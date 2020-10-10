@@ -1,0 +1,12 @@
+<div class="mb-3">
+    <div class="show">
+        <img [src]="productItem.photo" alt="">
+    </div>
+    <div>
+        <h3>{{productItem.title}}</h3>
+        <h5>{{productItem.description}}</h5>
+        <p>{{productItem.text}}</p>
+        <p>{{productItem.price}}</p>
+        <button class="btn btn-primary" (click)="addToCart(productItem)">Add to cart</button>
+    </div>
+</div>

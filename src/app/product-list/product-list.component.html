@@ -1,0 +1,11 @@
+<div class="container block">
+    <strong>Display</strong>
+    <button class="btn btn-primary" (click)="changeView ('list')">List</button>
+    <button class="btn btn-success" (click)="changeView ('grid')">Grid</button>
+  </div>
+<p *ngFor="let item of productSelect; let i = index">{{item.title}}   {{item.price}} <button (click)="deleteProduct(i)">X</button></p>
+<div [ngClass] = "modeView">
+    <div class="d-flex flex-wrap">
+<app-product-item *ngFor="let product of products" [productItem]="product" (getTitle)="showTitle($event)"></app-product-item>
+</div>
+</div>

@@ -1,0 +1,8 @@
+.show {
+    float: left;
+    padding-right: 20px;
+}
+:host-context(.grid) {
+    width: 50%;
+    padding: 20px;
+}
