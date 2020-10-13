@@ -10,7 +10,6 @@ export class SearchPipe implements PipeTransform {
     if (!search) {
       return value;
     }
-
     return value.filter((item) => item.name.includes(search));
   }
 

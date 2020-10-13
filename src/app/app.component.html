@@ -20,7 +20,6 @@
       <th>Product</th>
       <th>Price</th>
       <th></th>
-      <!-- <th><button type="button" class="close">X</button></th> -->
     </tr>
   </thead>
   <tr>
@@ -28,5 +27,6 @@
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
+    <td><button type="button" (click)="deleteProduct(i)">X</button></td>
   </tr>
 </table>
