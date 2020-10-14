@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchPipe } from './search.pipe';
 import { FormsModule } from '@angular/forms';
+import { SortPricePipe } from './sort-price.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchPipe
+    SearchPipe,
+    SortPricePipe
   ],
   imports: [
     BrowserModule,

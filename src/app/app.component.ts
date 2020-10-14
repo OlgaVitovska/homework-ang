@@ -23,19 +23,26 @@ export class AppComponent {
     price: 150
   }];
   
+  order = false;
+  
   searchProduct = '';
   
   productModel = {
     name: '',
     price: ''
   };
-
-  addProduct() {
+  
+   addProduct() {
     const lastId = this.products[this.products.length-1].id + 1;
     this.products.push({id: lastId, name: this.productModel.name, price: +this.productModel.price});
   }
 
-  deleteProduct(i) {
-    this.products.splice(i, 1);
+  deleteProduct(i) {  
+   this.products.splice(i, 1);
   }
+
+  sortPrice() {
+    this.order = !this.order;
+  }
+
 }

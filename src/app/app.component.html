@@ -18,12 +18,12 @@
     <tr>
       <th>#</th>
       <th>Product</th>
-      <th>Price</th>
+      <th (click)="sortPrice()">Price</th>
       <th></th>
     </tr>
   </thead>
   <tr>
-  <tr *ngFor="let product of products">
+  <tr *ngFor="let product of products | search:searchProduct | sortPrice:order; let i = index;">
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
