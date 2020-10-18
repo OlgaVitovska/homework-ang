@@ -1,0 +1,15 @@
+<h3>Login form (template)</h3>
+<form class="form-horizontal" (ngSubmit)='sendForm()'>
+    <div class="input-group">
+        <input type="text" name='username' [(ngModel)]="formSetting.username" placeholder="Username or email" required>
+    </div>
+    <div class="input-group">
+        <input type="password" name="password" [(ngModel)]="formSetting.password" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+        <a href="#" class="pull-right">Forgot password?</a>
+    </div>  
+    <input type='submit' value='Login' class="btn btn-success btn-custom">
+</form>

@@ -1,0 +1,34 @@
+<h3>Register form (reactiv)</h3>
+<form class="form-horizontal" [formGroup]='formSetting' (ngSubmit)='sendForm()'>
+    <div class="input-group">
+        <input type='text' formControlName='username' placeholder="Username">
+    </div>
+    <div class="input-group">
+        <input type='text' formControlName='fullname' placeholder="Full name">
+    </div>
+    <div class="input-group">
+        <input type='email' formControlName='email' placeholder="Email" [ngClass]="{'error-input': !form.email.valid}">
+    </div>
+    <div>
+        <p>
+            <span *ngIf="form.email.errors?.required && !form.email.pristine" class="error-msg">
+                Email is required
+            </span>
+        </p>
+        <p>
+            <span *ngIf="form.email.errors?.email && !form.email.pristine" class="error-msg">
+                Format email
+            </span>
+        </p>
+    </div>
+    <div class="input-group">
+        <input type='password' name='password' formControlName='password' placeholder="Password">
+    </div>
+    <div class="input-group">
+        <input type='password' formControlName='confirmpsw' placeholder="Confirm password">
+        <!-- <div *ngIf="formSetting.get('confirmpsw').errors.required">
+            Confirm Password is required
+        </div> -->
+    </div>
+    <input type='submit' value='Register' class="btn btn-success btn-custom" [disabled]="!formSetting.valid">
+</form>
