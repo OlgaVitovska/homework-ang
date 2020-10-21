@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-reactive',
@@ -20,9 +20,9 @@ export class FormReactiveComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]],
       confirmpsw: ['', Validators.required]
-    }, {validator: this.passwordMatchValidator});
+    }, { validator: this.passwordMatchValidator });
   }
-  
+
   sendForm() {
     console.log(this.formSetting.value);
   }
@@ -31,13 +31,11 @@ export class FormReactiveComponent implements OnInit {
     return this.formSetting.controls;
   }
 
-  private passwordMatchValidator(): ValidatorFn {
-        return (group: FormGroup):{ [key: string]: any} => {
-          if (!(group.dirty || group.touched) || group.get ('password').value === group.get ('confirmpsw').value) {return null;
-          }
-          return {
-            custom: 'Password are not equal'
-          };
-    };
+  private passwordMatchValidator(group: FormGroup) {
+    let pass = group.get('password').value;
+    let confirmPass = group.get('confirmpsw').value
+    if (pass !== confirmPass) {
+      group.get('confirmpsw').setErrors({ custom: true });
+    }
   };
 }

@@ -1,2 +1,11 @@
-<app-form-template></app-form-template>
-<app-form-reactive></app-form-reactive>
+<div class="container">
+<button class="btn btn-lg btn-primary" (click)="changeForm('login')">Login</button>
+<button class="btn btn-secondary btn-lg" (click)="changeForm('reg')">Registration</button>
+
+<div *ngIf="openForm === 'login'">
+    <app-form-template></app-form-template>
+</div>
+<div *ngIf="openForm === 'reg'">
+    <app-form-reactive></app-form-reactive>
+</div>
+</div>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'homework';
+
+  openForm = 'login';
+
+  changeForm(form) {
+    this.openForm = form;
+  }
 }
