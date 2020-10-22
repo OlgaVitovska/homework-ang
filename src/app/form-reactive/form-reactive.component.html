@@ -24,6 +24,11 @@
     </div>
     <div class="input-group">
         <input type='password' name='password' formControlName='password' placeholder="Password">
+        <div>
+            <span *ngIf="form.password.errors?.pattern && !form.password.pristine">
+                Minimum eight characters, at least one letter, one number
+            </span> 
+        </div>
     </div>
     <div class="input-group">
         <input type='password' formControlName='confirmpsw' placeholder="Confirm password">

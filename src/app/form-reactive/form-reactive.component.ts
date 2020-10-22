@@ -18,7 +18,7 @@ export class FormReactiveComponent implements OnInit {
       username: ['', Validators.required],
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]],
+      password: ['', [Validators.required, Validators.pattern("(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,15})$")]],
       confirmpsw: ['', Validators.required]
     }, { validator: this.passwordMatchValidator });
   }
