@@ -8,14 +8,15 @@ import { PostService } from './post.service';
 })
 export class AppComponent {
   title = 'homework';
-
-  
+  comments;
   constructor(
     private post: PostService
   ) { }
 
   ngOnInit() {
-
-    this.post.consecutiveRequest();
-  }
+    this.post.consecutiveRequest().subscribe((res) => {
+      console.log(res);
+      this.comments = res;
+  });
+}
 }
