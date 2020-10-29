@@ -1,0 +1,10 @@
+nav {
+  a {
+    margin-left: 20px;
+    &.active 
+    {color: rgb(124, 9, 9);
+    font-weight: bolder;
+    font-size: large;
+      }
+  }
+}

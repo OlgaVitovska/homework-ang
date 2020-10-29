@@ -1,0 +1,7 @@
+<div *ngFor="let todo of todos">
+    
+    <h2>{{todo.id}}.{{todo.title}}</h2>
+    <p>{{todo.completed}} <span class="marker" [ngClass]="{'marker-1': todo.completed === true, 'marker-2': todo.completed === false}"></span></p>
+
+    <a [routerLink]="[ '/todos', todo.id ]" class="link">Details</a>
+</div>

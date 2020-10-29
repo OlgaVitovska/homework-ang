@@ -1,0 +1,6 @@
+<ng-container *ngIf="todo">
+    <h2>{{todo.id}}.{{todo.title}}</h2>
+    <p>{{todo.completed}} <span class="marker"
+            [ngClass]="{'marker-1': todo.completed === true, 'marker-2': todo.completed === false}"></span></p>
+    <button class="button" (click)="backPost()">To All</button>
+</ng-container>
